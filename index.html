@@ -1072,6 +1072,130 @@
         letter-spacing: 0.04em;
         text-align: center;
       }
+      .join-location {
+        margin-top: 2px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 176, 32, 0.45);
+        background: rgba(255, 176, 32, 0.12);
+        color: var(--amber);
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-align: center;
+        animation: locPulse 2.2s ease-in-out infinite;
+      }
+      @keyframes locPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 14px rgba(255, 176, 32, 0.15);
+        }
+        50% {
+          box-shadow: 0 0 28px rgba(255, 176, 32, 0.4);
+        }
+      }
+
+      /* ============================================================
+         团队建设轮播
+         ============================================================ */
+      .team-building {
+        padding: 108px 0 88px;
+      }
+      .tb-carousel {
+        position: relative;
+        max-width: 920px;
+        margin: 0 auto;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--line-strong);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        background: var(--bg-2);
+      }
+      .tb-slide {
+        display: none;
+        position: relative;
+      }
+      .tb-slide.active {
+        display: block;
+        animation: tbFade 0.7s ease;
+      }
+      @keyframes tbFade {
+        from {
+          opacity: 0;
+          transform: scale(1.03);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .tb-slide img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 8.5;
+        object-fit: cover;
+      }
+      .tb-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 44px 22px 18px;
+        background: linear-gradient(transparent, rgba(3, 8, 20, 0.88));
+        color: var(--txt-hi);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      .tb-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--line-strong);
+        background: rgba(5, 10, 23, 0.6);
+        color: var(--txt-hi);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s, border-color 0.25s;
+        z-index: 2;
+      }
+      .tb-arrow:hover {
+        background: var(--blue);
+        border-color: var(--blue);
+      }
+      .tb-arrow.prev {
+        left: 14px;
+      }
+      .tb-arrow.next {
+        right: 14px;
+      }
+      .tb-dots {
+        position: absolute;
+        bottom: 52px;
+        right: 18px;
+        display: flex;
+        gap: 8px;
+        z-index: 2;
+      }
+      .tb-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        background: rgba(234, 241, 255, 0.35);
+        transition: background 0.25s, transform 0.25s;
+      }
+      .tb-dot.active {
+        background: var(--amber);
+        transform: scale(1.25);
+      }
 
       /* ============================================================
          页脚
@@ -1282,7 +1406,7 @@
     <header class="nav" id="navbar">
       <div class="nav-inner">
         <a class="nav-brand" href="#hero">
-          <span class="nav-logo"><img src="https://aka.doubaocdn.com/s/JmhjzQiliH" alt="社团logo" /></span>
+          <span class="nav-logo"><img src="社团logo%20圆.png" alt="社团logo" /></span>
           <span>
             <span class="nav-brand-name">产品数字化设计社团</span>
             <span class="nav-brand-sub">Digital Design Club</span>
@@ -1293,6 +1417,7 @@
             <li><a href="#about">关于社团</a></li>
             <li><a href="#skills">技能方向</a></li>
             <li><a href="#team">成员风采</a></li>
+            <li><a href="#team-building">团队建设</a></li>
             <li><a href="#honors">荣誉奖项</a></li>
             <li><a class="nav-cta" href="#join">加入我们</a></li>
           </ul>
@@ -1330,7 +1455,7 @@
             <div class="hero-badge reveal in">
               <span class="hero-badge-ring" aria-hidden="true"></span>
               <span class="hero-badge-ring r2" aria-hidden="true"></span>
-              <img src="https://aka.doubaocdn.com/s/JmhjzQiliH" alt="产品数字化设计社团标识" />
+              <img src="社团logo%20圆.png" alt="产品数字化设计社团标识" />
             </div>
           </div>
         </div>
@@ -1386,15 +1511,15 @@
           <!-- 数据统计 -->
           <div class="stats">
             <div class="stat reveal">
-              <div class="stat-num"><span class="count" data-target="8">0</span></div>
+              <div class="stat-num"><span class="count" data-target="10">0</span></div>
               <div class="stat-label">核心成员</div>
             </div>
             <div class="stat reveal reveal-d1">
-              <div class="stat-num"><span class="count" data-target="4">0</span></div>
+              <div class="stat-num"><span class="count" data-target="5">0</span></div>
               <div class="stat-label">届机电精英</div>
             </div>
             <div class="stat reveal reveal-d2">
-              <div class="stat-num"><span class="count" data-target="40">0</span><span class="suffix">+</span></div>
+              <div class="stat-num"><span class="count" data-target="13">0</span></div>
               <div class="stat-label">竞赛荣誉</div>
             </div>
             <div class="stat reveal reveal-d3">
@@ -1491,15 +1616,43 @@
           <div class="sec-head reveal">
             <div class="sec-eyebrow">Our Team</div>
             <h2 class="sec-title">成员<span class="accent">风采</span></h2>
-            <p class="sec-sub">四届机电精英，以一张张图纸与一座座奖杯，写下属于这个社团的注脚。</p>
+            <p class="sec-sub">五届机电精英，以一张张图纸与一座座奖杯，写下属于这个社团的注脚。</p>
           </div>
 
           <div class="team-grid">
+            <!-- 葛帅 -->
+            <article class="member-card reveal">
+              <div class="member-photo">
+                <span class="member-badge">26届社长</span>
+                <img src="images/成员-葛帅.jpg" alt="葛帅" loading="lazy" />
+              </div>
+              <div class="member-info">
+                <div class="member-name">葛帅</div>
+                <div class="member-class">25 级机电 2 班</div>
+                <div class="member-tags">
+                  <span class="member-tag gold">26届社长</span>
+                  <span class="member-tag">华东区CAD一等奖</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 徐朝阳 -->
+            <article class="member-card reveal reveal-d1">
+              <div class="member-photo">
+                <img src="images/成员-徐朝阳.jpg" alt="徐朝阳" loading="lazy" />
+              </div>
+              <div class="member-info">
+                <div class="member-name">徐朝阳</div>
+                <div class="member-class">25 级机电 1 班</div>
+                <div class="member-tags"></div>
+              </div>
+            </article>
+
             <!-- 郑成 -->
             <article class="member-card reveal">
               <div class="member-photo">
                 <span class="member-badge">全国成图大赛</span>
-                <img src="https://aka.doubaocdn.com/s/CNaLyRD5uB" alt="郑成" loading="lazy" />
+                <img src="images/成员-郑成.jpeg" alt="郑成" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">郑成</div>
@@ -1517,7 +1670,7 @@
             <article class="member-card reveal reveal-d1">
               <div class="member-photo">
                 <span class="member-badge">全国成图大赛</span>
-                <img src="https://aka.doubaocdn.com/s/RWCq69nFE1" alt="王金良" loading="lazy" />
+                <img src="images/成员-王金良.jpeg" alt="王金良" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">王金良</div>
@@ -1533,7 +1686,7 @@
             <!-- 黄钰昕 -->
             <article class="member-card reveal reveal-d2">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/vXZebAXCfg" alt="黄钰昕" loading="lazy" />
+                <img src="images/成员-黄钰昕.jpeg" alt="黄钰昕" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">黄钰昕</div>
@@ -1549,7 +1702,7 @@
             <!-- 尚明江 -->
             <article class="member-card reveal reveal-d3">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/UEiXg8E1ur" alt="尚明江" loading="lazy" />
+                <img src="images/成员-尚明江.jpeg" alt="尚明江" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">尚明江</div>
@@ -1565,7 +1718,7 @@
             <!-- 邢世杰 -->
             <article class="member-card reveal">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/1ZGhpzIKmv" alt="邢世杰" loading="lazy" />
+                <img src="images/成员-邢世杰.jpeg" alt="邢世杰" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">邢世杰</div>
@@ -1581,7 +1734,7 @@
             <!-- 杨宇杰 -->
             <article class="member-card reveal reveal-d1">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/Wpm06G25YU" alt="杨宇杰" loading="lazy" />
+                <img src="images/成员-杨宇杰.jpeg" alt="杨宇杰" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">杨宇杰</div>
@@ -1596,7 +1749,7 @@
             <!-- 曹梦兵 -->
             <article class="member-card reveal reveal-d2">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/s2HfyoMboj" alt="曹梦兵" loading="lazy" />
+                <img src="images/成员-曹梦兵.jpeg" alt="曹梦兵" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">曹梦兵</div>
@@ -1612,7 +1765,7 @@
             <!-- 章恺琦 -->
             <article class="member-card reveal reveal-d3">
               <div class="member-photo">
-                <img src="https://aka.doubaocdn.com/s/MSN4PEsQgE" alt="章恺琦" loading="lazy" />
+                <img src="images/成员-章恺琦.jpeg" alt="章恺琦" loading="lazy" />
               </div>
               <div class="member-info">
                 <div class="member-name">章恺琦</div>
@@ -1628,6 +1781,39 @@
         </div>
       </section>
 
+      <!-- ===== 团队建设 ===== -->
+      <section class="team-building" id="team-building">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div class="sec-eyebrow">Team Building</div>
+            <h2 class="sec-title">团队<span class="accent">建设</span></h2>
+            <p class="sec-sub">走出教室、走上赛场——每一次同行，都是团队最好的建设。</p>
+          </div>
+
+          <div class="tb-carousel reveal" id="tbCarousel">
+            <div class="tb-slide active">
+              <img src="images/26年成图杯.jpg" alt="全国大学生成图大赛参赛现场" loading="lazy" />
+              <div class="tb-caption">全国大学生先进成图技术与产品信息建模创新大赛 · 南林淮安</div>
+            </div>
+            <div class="tb-slide">
+              <img src="images/26年华东区.jpg" alt="华东区大学生CAD技能竞赛现场" loading="lazy" />
+              <div class="tb-caption">华东区大学生 CAD 应用技能竞赛 · 淮安大学</div>
+            </div>
+            <button class="tb-arrow prev" id="tbPrev" aria-label="上一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="tb-arrow next" id="tbNext" aria-label="下一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </button>
+            <div class="tb-dots" id="tbDots"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== 荣誉奖项 ===== -->
       <section class="honors" id="honors">
         <div class="wrap">
@@ -1635,18 +1821,6 @@
             <div class="sec-eyebrow">Honors</div>
             <h2 class="sec-title">荣誉<span class="accent">奖项</span></h2>
             <p class="sec-sub">从校级赛场到国家级舞台，每一份荣誉都是认真画图的回报。</p>
-          </div>
-
-          <!-- 比赛纪实 -->
-          <div class="honor-banners">
-            <figure class="honor-banner reveal">
-              <img src="https://aka.doubaocdn.com/s/WmXx99p7f5" alt="全国大学生成图大赛参赛现场" loading="lazy" />
-              <figcaption class="honor-banner-caption">全国大学生先进成图技术与产品信息建模创新大赛 · 南林淮安</figcaption>
-            </figure>
-            <figure class="honor-banner reveal reveal-d1">
-              <img src="https://aka.doubaocdn.com/s/3DT5uTIi2d" alt="华东区大学生CAD技能竞赛现场" loading="lazy" />
-              <figcaption class="honor-banner-caption">华东区大学生 CAD 应用技能竞赛 · 淮安大学</figcaption>
-            </figure>
           </div>
 
           <!-- 获奖级别总览 -->
@@ -1681,44 +1855,44 @@
           <!-- 证书画廊（按年份由近到远、奖项由高到低排列） -->
           <div class="cert-title reveal">获奖证书墙 · 按年份与奖项排序</div>
           <div class="cert-gallery">
-            <button class="cert-item reveal" data-src="https://aka.doubaocdn.com/s/MiNjAwgyNG" aria-label="郑成 · 第十六届华东区CAD三维一等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/MiNjAwgyNG" alt="郑成 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal" data-src="images/2026第十六届华东区CAD三维一等奖-郑成.jpg" aria-label="郑成 · 第十六届华东区CAD三维一等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维一等奖-郑成.jpg" alt="郑成 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d1" data-src="https://aka.doubaocdn.com/s/yUd9p7XU4c" aria-label="陈波源 · 第十六届华东区CAD三维一等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/yUd9p7XU4c" alt="陈波源 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal reveal-d1" data-src="images/2026第十六届华东区CAD三维一等奖-陈波源.jpg" aria-label="陈波源 · 第十六届华东区CAD三维一等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维一等奖-陈波源.jpg" alt="陈波源 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d2" data-src="https://aka.doubaocdn.com/s/nzdBJCK2lF" aria-label="葛帅 · 第十六届华东区CAD三维一等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/nzdBJCK2lF" alt="葛帅 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal reveal-d2" data-src="images/2026第十六届华东区CAD三维一等奖-葛帅.jpg" aria-label="葛帅 · 第十六届华东区CAD三维一等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维一等奖-葛帅.jpg" alt="葛帅 · 第十六届华东区CAD三维一等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal" data-src="https://aka.doubaocdn.com/s/FCPKRUt8HB" aria-label="成浩 · 第十六届华东区CAD三维二等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/FCPKRUt8HB" alt="成浩 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal" data-src="images/2026第十六届华东区CAD三维二等奖-成浩.jpg" aria-label="成浩 · 第十六届华东区CAD三维二等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维二等奖-成浩.jpg" alt="成浩 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d1" data-src="https://aka.doubaocdn.com/s/Io3RA5wg2U" aria-label="唐源华 · 第十六届华东区CAD三维二等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/Io3RA5wg2U" alt="唐源华 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal reveal-d1" data-src="images/2026第十六届华东区CAD三维二等奖-唐源华.jpg" aria-label="唐源华 · 第十六届华东区CAD三维二等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维二等奖-唐源华.jpg" alt="唐源华 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d2" data-src="https://aka.doubaocdn.com/s/UtfXwWG7T4" aria-label="孔令源 · 第十六届华东区CAD三维二等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/UtfXwWG7T4" alt="孔令源 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal reveal-d2" data-src="images/2026第十六届华东区CAD三维二等奖-孔令源.jpg" aria-label="孔令源 · 第十六届华东区CAD三维二等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维二等奖-孔令源.jpg" alt="孔令源 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal" data-src="https://aka.doubaocdn.com/s/jw41SSHuzK" aria-label="吴旭旭 · 第十六届华东区CAD三维二等奖（2026）">
-              <img src="https://aka.doubaocdn.com/s/jw41SSHuzK" alt="吴旭旭 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
+            <button class="cert-item reveal" data-src="images/2026第十六届华东区CAD三维二等奖-吴旭旭.jpg" aria-label="吴旭旭 · 第十六届华东区CAD三维二等奖（2026）">
+              <img src="images/2026第十六届华东区CAD三维二等奖-吴旭旭.jpg" alt="吴旭旭 · 第十六届华东区CAD三维二等奖（2026）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d1" data-src="https://aka.doubaocdn.com/s/p9xJHSsdUp" aria-label="郑成 · 第十四届华东区CAD三维二等奖（2024）">
-              <img src="https://aka.doubaocdn.com/s/p9xJHSsdUp" alt="郑成 · 第十四届华东区CAD三维二等奖（2024）" loading="lazy" />
+            <button class="cert-item reveal reveal-d1" data-src="images/2024第十四届华东区CAD三维二等奖-郑成.jpeg" aria-label="郑成 · 第十四届华东区CAD三维二等奖（2024）">
+              <img src="images/2024第十四届华东区CAD三维二等奖-郑成.jpeg" alt="郑成 · 第十四届华东区CAD三维二等奖（2024）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d2" data-src="https://aka.doubaocdn.com/s/3aIVO3s3Zp" aria-label="王金良 · 第十四届华东区CAD三维二等奖（2024）">
-              <img src="https://aka.doubaocdn.com/s/3aIVO3s3Zp" alt="王金良 · 第十四届华东区CAD三维二等奖（2024）" loading="lazy" />
+            <button class="cert-item reveal reveal-d2" data-src="images/2024第十四届华东区CAD三维二等奖-王金良.jpeg" aria-label="王金良 · 第十四届华东区CAD三维二等奖（2024）">
+              <img src="images/2024第十四届华东区CAD三维二等奖-王金良.jpeg" alt="王金良 · 第十四届华东区CAD三维二等奖（2024）" loading="lazy" />
             </button>
-            <button class="cert-item reveal" data-src="https://aka.doubaocdn.com/s/4aGHZWFWmP" aria-label="王金良 · 江苏省第四届成图大赛预选赛三等奖（2024）">
-              <img src="https://aka.doubaocdn.com/s/4aGHZWFWmP" alt="王金良 · 江苏省第四届成图大赛预选赛三等奖（2024）" loading="lazy" />
+            <button class="cert-item reveal" data-src="images/2024江苏省第四届成图大赛预选赛三等奖-王金良.jpeg" aria-label="王金良 · 江苏省第四届成图大赛预选赛三等奖（2024）">
+              <img src="images/2024江苏省第四届成图大赛预选赛三等奖-王金良.jpeg" alt="王金良 · 江苏省第四届成图大赛预选赛三等奖（2024）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d1" data-src="https://aka.doubaocdn.com/s/lMYiEQmLQo" aria-label="黄钰昕 · 第十三届华东区CAD三维二等奖（2023）">
-              <img src="https://aka.doubaocdn.com/s/lMYiEQmLQo" alt="黄钰昕 · 第十三届华东区CAD三维二等奖（2023）" loading="lazy" />
+            <button class="cert-item reveal reveal-d1" data-src="images/2023第十三届华东区CAD三维二等奖-黄钰昕.jpeg" aria-label="黄钰昕 · 第十三届华东区CAD三维二等奖（2023）">
+              <img src="images/2023第十三届华东区CAD三维二等奖-黄钰昕.jpeg" alt="黄钰昕 · 第十三届华东区CAD三维二等奖（2023）" loading="lazy" />
             </button>
-            <button class="cert-item reveal reveal-d2" data-src="https://aka.doubaocdn.com/s/KMEa7m2Sc4" aria-label="章恺琦 · 第十二届华东区CAD三维一等奖（2022）">
-              <img src="https://aka.doubaocdn.com/s/KMEa7m2Sc4" alt="章恺琦 · 第十二届华东区CAD三维一等奖（2022）" loading="lazy" />
+            <button class="cert-item reveal reveal-d2" data-src="images/2022第十二届华东区CAD三维一等奖-章恺琦.jpeg" aria-label="章恺琦 · 第十二届华东区CAD三维一等奖（2022）">
+              <img src="images/2022第十二届华东区CAD三维一等奖-章恺琦.jpeg" alt="章恺琦 · 第十二届华东区CAD三维一等奖（2022）" loading="lazy" />
             </button>
-            <button class="cert-item reveal" data-src="https://aka.doubaocdn.com/s/q4jaBPcDsV" aria-label="邢世杰 · 第十二届华东区CAD三维二等奖（2022）">
-              <img src="https://aka.doubaocdn.com/s/q4jaBPcDsV" alt="邢世杰 · 第十二届华东区CAD三维二等奖（2022）" loading="lazy" />
+            <button class="cert-item reveal" data-src="images/2022第十二届华东区CAD三维二等奖-邢世杰.jpeg" aria-label="邢世杰 · 第十二届华东区CAD三维二等奖（2022）">
+              <img src="images/2022第十二届华东区CAD三维二等奖-邢世杰.jpeg" alt="邢世杰 · 第十二届华东区CAD三维二等奖（2022）" loading="lazy" />
             </button>
           </div>
         </div>
@@ -1743,9 +1917,10 @@
             </div>
             <div class="join-side">
               <div class="qr-box">
-                <img src="https://aka.doubaocdn.com/s/JmhjzQiliH" alt="产品数字化设计社团 logo" />
+                <img src="社团logo%20圆.png" alt="产品数字化设计社团 logo" />
               </div>
               <div class="qr-tip">产品数字化设计社团 · 期待你的加入</div>
+              <div class="join-location">诚行楼317教室 · 期待你的加入</div>
             </div>
           </div>
         </div>
@@ -1756,7 +1931,7 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="footer-logo"><img src="https://aka.doubaocdn.com/s/JmhjzQiliH" alt="社团logo" /></span>
+          <span class="footer-logo"><img src="社团logo%20圆.png" alt="社团logo" /></span>
           <div class="footer-name">
             产品数字化设计社团
             <small>江苏财经职业技术学院 · 机电专业群</small>
@@ -1766,6 +1941,7 @@
           <a href="#about">关于社团</a>
           <a href="#skills">技能方向</a>
           <a href="#team">成员风采</a>
+          <a href="#team-building">团队建设</a>
           <a href="#honors">荣誉奖项</a>
           <a href="#join">加入我们</a>
         </div>
@@ -2033,6 +2209,61 @@
         counters.forEach(function (c) {
           io.observe(c);
         });
+      })();
+
+      /* ============================================================
+         团队建设轮播
+         ============================================================ */
+      (function () {
+        var carousel = document.getElementById("tbCarousel");
+        if (!carousel) return;
+        var slides = carousel.querySelectorAll(".tb-slide");
+        var dotsBox = document.getElementById("tbDots");
+        var idx = 0;
+        var timer = null;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        slides.forEach(function (_, i) {
+          var d = document.createElement("button");
+          d.className = "tb-dot" + (i === 0 ? " active" : "");
+          d.setAttribute("aria-label", "第" + (i + 1) + "张");
+          d.addEventListener("click", function () {
+            show(i);
+            restart();
+          });
+          dotsBox.appendChild(d);
+        });
+        var dots = dotsBox.querySelectorAll(".tb-dot");
+
+        function show(n) {
+          idx = (n + slides.length) % slides.length;
+          slides.forEach(function (s, i) {
+            s.classList.toggle("active", i === idx);
+          });
+          dots.forEach(function (d, i) {
+            d.classList.toggle("active", i === idx);
+          });
+        }
+        function restart() {
+          if (reduce) return;
+          clearInterval(timer);
+          timer = setInterval(function () {
+            show(idx + 1);
+          }, 4000);
+        }
+        document.getElementById("tbPrev").addEventListener("click", function () {
+          show(idx - 1);
+          restart();
+        });
+        document.getElementById("tbNext").addEventListener("click", function () {
+          show(idx + 1);
+          restart();
+        });
+        carousel.addEventListener("mouseenter", function () {
+          clearInterval(timer);
+        });
+        carousel.addEventListener("mouseleave", restart);
+        restart();
       })();
 
       /* ============================================================
